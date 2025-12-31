@@ -23,7 +23,7 @@ body{
   color:var(--text);
 }
 
-/* ================= SOLAR SYSTEM LOADER ================= */
+/* ================= LOADER ================= */
 #loader{
   position:fixed;
   inset:0;
@@ -34,80 +34,58 @@ body{
   justify-content:center;
   z-index:9999;
 }
-.solar{
-  position:relative;
-  width:260px;
-  height:260px;
-}
+.solar{position:relative;width:260px;height:260px}
 .sun{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:40px;
-  height:40px;
+  position:absolute;top:50%;left:50%;
+  width:40px;height:40px;
   background:radial-gradient(circle,#fde68a,#f59e0b);
   border-radius:50%;
   transform:translate(-50%,-50%);
   box-shadow:0 0 30px #fbbf24;
 }
 .orbit{
-  position:absolute;
-  top:50%;
-  left:50%;
+  position:absolute;top:50%;left:50%;
   border:1px dashed rgba(255,255,255,.15);
   border-radius:50%;
   transform:translate(-50%,-50%);
   animation:spin linear infinite;
 }
-.planet{
-  position:absolute;
-  top:-6px;
-  left:50%;
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  transform:translateX(-50%);
-}
+.planet{position:absolute;top:-6px;left:50%;width:10px;height:10px;border-radius:50%}
 .mercury{width:60px;height:60px;animation-duration:2s}
-.mercury .planet{background:#9ca3af}
 .venus{width:80px;height:80px;animation-duration:3s}
-.venus .planet{background:#fcd34d}
 .earth{width:100px;height:100px;animation-duration:4s}
-.earth .planet{background:#38bdf8}
 .mars{width:120px;height:120px;animation-duration:5s}
-.mars .planet{background:#ef4444}
 .jupiter{width:150px;height:150px;animation-duration:7s}
-.jupiter .planet{background:#f59e0b}
 .saturn{width:180px;height:180px;animation-duration:9s}
-.saturn .planet{background:#fde68a}
 .uranus{width:210px;height:210px;animation-duration:11s}
-.uranus .planet{background:#67e8f9}
 .neptune{width:240px;height:240px;animation-duration:13s}
+
+.mercury .planet{background:#9ca3af}
+.venus .planet{background:#fcd34d}
+.earth .planet{background:#38bdf8}
+.mars .planet{background:#ef4444}
+.jupiter .planet{background:#f59e0b}
+.saturn .planet{background:#fde68a}
+.uranus .planet{background:#67e8f9}
 .neptune .planet{background:#6366f1}
 
 #loader p{
   margin-top:22px;
   color:var(--gold);
-  letter-spacing:1px;
   animation:fade 1.2s infinite alternate;
 }
 
 /* ================= HEADER ================= */
 header{
-  position:sticky;
-  top:0;
+  position:sticky;top:0;
   background:rgba(2,6,23,.9);
   backdrop-filter:blur(10px);
   border-bottom:1px solid rgba(251,191,36,.3);
 }
-nav{
-  text-align:center;
-  padding:16px;
-}
+nav{text-align:center;padding:16px}
 nav h1{color:var(--gold);font-size:24px}
-nav span{font-size:13px;color:var(--muted)}
 nav a{
-  margin:12px 8px;
+  margin:8px;
   color:#fff;
   text-decoration:none;
   font-size:14px;
@@ -122,28 +100,40 @@ h2{text-align:center;color:var(--gold);margin-bottom:36px}
 /* ================= ABOUT ================= */
 .about{display:grid;gap:28px;justify-items:center}
 .about img{
-  width:260px;
-  border-radius:22px;
-  border:3px solid var(--gold);
+  width:260px;border-radius:22px;border:3px solid var(--gold)
 }
-.about p{
-  background:#111827;
-  padding:26px;
-  border-radius:22px;
-}
+.about p{background:#111827;padding:26px;border-radius:22px}
 
 /* ================= SERVICES ================= */
 .services{display:grid;gap:22px}
 .service{
-  background:#111827;
-  padding:22px;
-  border-radius:22px;
-  text-align:center;
-  border:1px solid rgba(251,191,36,.25);
+  background:#111827;padding:22px;
+  border-radius:22px;text-align:center;
+  border:1px solid rgba(251,191,36,.25)
 }
 .service h3{color:var(--gold)}
 
-/* ================= CONTACT US DESIGN ================= */
+/* ================= YOUTUBE ================= */
+.youtube-grid{display:grid;gap:22px}
+.yt-card{
+  background:#111827;
+  border:1px solid rgba(251,191,36,.25);
+  border-radius:22px;
+  padding:12px;
+  transition:.3s;
+}
+.yt-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 30px rgba(251,191,36,.25);
+}
+.yt-card iframe{
+  width:100%;
+  height:190px;
+  border-radius:16px;
+  border:none;
+}
+
+/* ================= CONTACT ================= */
 .contact-card{
   background:linear-gradient(145deg,#020617,#111827);
   border:1px solid rgba(251,191,36,.25);
@@ -152,67 +142,38 @@ h2{text-align:center;color:var(--gold);margin-bottom:36px}
   max-width:520px;
   margin:auto;
   text-align:center;
-  box-shadow:0 20px 45px rgba(0,0,0,.6);
 }
-.contact-item{
-  margin:14px 0;
-  font-size:15px;
-}
-.contact-item a{
-  color:#e5e7eb;
-  text-decoration:none;
-}
+.contact-item{margin:14px 0}
+.contact-item a{color:#e5e7eb;text-decoration:none}
 .contact-item a:hover{color:var(--gold)}
+
 .social-row{
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  margin-top:22px;
+  display:flex;justify-content:center;gap:22px;margin-top:22px
 }
-.social-row a{
-  width:46px;
-  height:46px;
-  border-radius:12px;
-  background:#020617;
-  border:1px solid rgba(251,191,36,.3);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.3s;
-}
-.social-row a:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 25px rgba(251,191,36,.35);
-}
-.social-row img{
-  width:28px;
-  height:28px;
-  object-fit:contain;
-}
+.social-row img{width:32px}
 
 /* ================= WHATSAPP ================= */
 .whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:52px;
-  height:52px;
+  position:fixed;bottom:20px;right:20px;
+  width:56px;height:56px;
   animation:pulse 1.6s infinite;
 }
 .whatsapp img{width:100%;border-radius:50%}
 
-/* ================= ANIMATIONS ================= */
-@keyframes spin{
-  from{transform:translate(-50%,-50%) rotate(0)}
-  to{transform:translate(-50%,-50%) rotate(360deg)}
-}
-@keyframes pulse{50%{transform:scale(1.1)}}
-@keyframes fade{from{opacity:.4}to{opacity:1}}
-
+/* ================= RESPONSIVE ================= */
 @media(min-width:768px){
   .about{grid-template-columns:1fr 1fr}
   .services{grid-template-columns:repeat(3,1fr)}
+  .youtube-grid{grid-template-columns:repeat(2,1fr)}
 }
+@media(min-width:1024px){
+  .youtube-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes pulse{50%{transform:scale(1.1)}}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
 </style>
 </head>
 
@@ -240,6 +201,7 @@ h2{text-align:center;color:var(--gold);margin-bottom:36px}
   <h1>ஸ்ரீ லக்ஷ்மி தேவி ஜோதிட நிலையம்</h1>
   <a href="#about">About</a>
   <a href="#services">Services</a>
+  <a href="#youtube">Videos</a>
   <a href="#contact">Contact</a>
 </nav>
 </header>
@@ -252,7 +214,7 @@ h2{text-align:center;color:var(--gold);margin-bottom:36px}
 <p>
 <strong>ஜோதிடர்: கே. லக்ஷ்மி தேவி</strong><br>
 M.Sc., M.A., B.Ed., M.A (Astro)<br><br>
-திருமணம் வேலை வாய்ப்பு தொழில் மேன்மை மற்றும் குடும்ப பிரச்சினைகளுக்கு ஜாதகரீதியாக தீர்வுகள் கொடுக்கப்படும் எளிய பரிகாரங்கள் மூலம் வாழ்வை வளமாக்குங்கள்
+திருமணம், வேலை வாய்ப்பு, தொழில் மேன்மை மற்றும் குடும்ப பிரச்சினைகளுக்கு எளிய பரிகாரங்கள்
 </p>
 </div>
 </section>
@@ -270,28 +232,36 @@ M.Sc., M.A., B.Ed., M.A (Astro)<br><br>
 </div>
 </section>
 
+<!-- YOUTUBE -->
+<section id="youtube">
+<h2>ஜோதிட வீடியோக்கள்</h2>
+<div class="youtube-grid">
+  <div class="yt-card"><iframe src="https://youtu.be/uewvbdKDZSI?si=9eF6ctUxIICmJw-J"></iframe></div>
+  <div class="yt-card"><iframe src="https://youtu.be/GCbdCEUoWXg?si=pN1mbWuiF00V1H66"></iframe></div>
+  <div class="yt-card"><iframe src="https://youtu.be/pjiAAfWTD1s?si=vQCFq4PPSR4SCcmr"></iframe></div>
+  <div class="yt-card"><iframe src="https://youtu.be/akET2ppH9Rk?si=hNTlqMwFdHnHOLUa"></iframe></div>
+</div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
 <h2>தொடர்பு கொள்ள</h2>
 <div class="contact-card">
   <div class="contact-item">📞 <a href="tel:9385719579">93857 19579</a></div>
   <div class="contact-item">📧 <a href="mailto:lakshmideviastro@gmail.com">lakshmideviastro@gmail.com</a></div>
-  <div class="contact-item">📍 Vellore, Tamil Nadu, India</div>
+  <div class="contact-item">📍 Vellore, Tamil Nadu</div>
 
   <div class="social-row">
-    <a href="https://instagram.com/" target="_blank">
-      <img src="https://img.freepik.com/premium-psd/instagram-logo_971166-164497.jpg?semt=ais_hybrid&w=740&q=80">
-    </a>
-    <a href="https://facebook.com/" target="_blank">
-      <img src="https://img.freepik.com/premium-vector/facebook-logo-vector-facebook-official-logo-vector-facebook-logo-illustrator_1002350-1803.jpg?semt=ais_hybrid&w=740&q=80">
-    </a>
+    <a href="#"><img src="https://img.freepik.com/premium-psd/instagram-logo_971166-164497.jpg"></a>
+    <a href="#"><img src="https://img.freepik.com/premium-vector/facebook-logo-vector-facebook-official-logo-vector-facebook-logo-illustrator_1002350-1803.jpg"></a>
   </div>
 </div>
 </section>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/919385719579?text=Vanakkam%20🙏%0AI%20need%20astrology%20service"
-class="whatsapp" target="_blank">
+<a class="whatsapp"
+href="https://wa.me/919385719579?text=Vanakkam%20🙏%0AI%20need%20astrology%20service"
+target="_blank">
 <img src="https://www.freeiconspng.com/thumbs/logo-whatsapp-png/whatsapp-logo-background-29.png">
 </a>
 
