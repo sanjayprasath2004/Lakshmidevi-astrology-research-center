@@ -23,7 +23,7 @@ body{
   color:var(--text);
 }
 
-/* ================= LOADER ================= */
+/* ========== LOADER ========== */
 #loader{
   position:fixed;
   inset:0;
@@ -51,6 +51,7 @@ body{
   animation:spin linear infinite;
 }
 .planet{position:absolute;top:-6px;left:50%;width:10px;height:10px;border-radius:50%}
+
 .mercury{width:60px;height:60px;animation-duration:2s}
 .venus{width:80px;height:80px;animation-duration:3s}
 .earth{width:100px;height:100px;animation-duration:4s}
@@ -75,36 +76,37 @@ body{
   animation:fade 1.2s infinite alternate;
 }
 
-/* ================= HEADER ================= */
+/* ========== HEADER ========== */
 header{
   position:sticky;top:0;
   background:rgba(2,6,23,.9);
   backdrop-filter:blur(10px);
   border-bottom:1px solid rgba(251,191,36,.3);
+  z-index:99;
 }
 nav{text-align:center;padding:16px}
 nav h1{color:var(--gold);font-size:24px}
 nav a{
-  margin:8px;
+  margin:6px;
   color:#fff;
   text-decoration:none;
   font-size:14px;
   padding:6px 14px;
   border-radius:20px;
 }
-nav a:hover{background:rgba(251,191,36,.15)}
+nav a:hover{background:rgba(251,191,36,.2)}
 
 section{padding:64px 18px;max-width:1100px;margin:auto}
 h2{text-align:center;color:var(--gold);margin-bottom:36px}
 
-/* ================= ABOUT ================= */
+/* ========== ABOUT ========== */
 .about{display:grid;gap:28px;justify-items:center}
 .about img{
   width:260px;border-radius:22px;border:3px solid var(--gold)
 }
 .about p{background:#111827;padding:26px;border-radius:22px}
 
-/* ================= SERVICES ================= */
+/* ========== SERVICES ========== */
 .services{display:grid;gap:22px}
 .service{
   background:#111827;padding:22px;
@@ -113,66 +115,107 @@ h2{text-align:center;color:var(--gold);margin-bottom:36px}
 }
 .service h3{color:var(--gold)}
 
-/* ================= YOUTUBE ================= */
-.youtube-grid{display:grid;gap:22px}
+/* ========== YOUTUBE ========== */
+.youtube-grid{
+  display:grid;
+  gap:22px;
+  justify-items:center;
+}
 .yt-card{
+  width:100%;
+  max-width:360px;
   background:#111827;
   border:1px solid rgba(251,191,36,.25);
   border-radius:22px;
   padding:12px;
-  transition:.3s;
-}
-.yt-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 14px 30px rgba(251,191,36,.25);
 }
 .yt-card iframe{
   width:100%;
-  height:190px;
+  height:200px;
   border-radius:16px;
   border:none;
 }
 
-/* ================= CONTACT ================= */
-.contact-card{
-  background:linear-gradient(145deg,#020617,#111827);
-  border:1px solid rgba(251,191,36,.25);
+/* ========== CONTACT ========== */
+.contact-wrap{
+  display:grid;
+  gap:28px;
+}
+
+.contact-info,
+.contact-cta{
+  background:linear-gradient(160deg,#020617,#111827);
+  border:1px solid rgba(251,191,36,.3);
   border-radius:26px;
-  padding:30px 22px;
-  max-width:520px;
-  margin:auto;
-  text-align:center;
+  padding:30px 26px;
 }
-.contact-item{margin:14px 0}
-.contact-item a{color:#e5e7eb;text-decoration:none}
-.contact-item a:hover{color:var(--gold)}
 
-.social-row{
-  display:flex;justify-content:center;gap:22px;margin-top:22px
+.contact-line{
+  display:flex;
+  gap:12px;
+  margin:14px 0;
 }
-.social-row img{width:32px}
 
-/* ================= WHATSAPP ================= */
-.whatsapp{
-  position:fixed;bottom:20px;right:20px;
-  width:56px;height:56px;
+.contact-line a{color:#e5e7eb;text-decoration:none}
+
+.contact-social{
+  display:flex;
+  gap:18px;
+  margin-top:22px;
+}
+.contact-social img{
+  width:40px;
+  background:#fff;
+  padding:6px;
+  border-radius:50%;
+  transition:.3s;
+}
+.contact-social img:hover{
+  transform:scale(1.2);
+  box-shadow:0 0 18px rgba(251,191,36,.6);
+}
+
+.contact-cta{text-align:center}
+
+.cta-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 30px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#fff;
+  text-decoration:none;
+  border-radius:999px;
+  font-weight:600;
+  box-shadow:0 0 25px rgba(34,197,94,.5);
   animation:pulse 1.6s infinite;
 }
-.whatsapp img{width:100%;border-radius:50%}
 
-/* ================= RESPONSIVE ================= */
+/* ========== WHATSAPP FLOAT ========== */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:64px;
+  height:64px;
+  z-index:999;
+  animation:pulse 1.6s infinite;
+}
+.whatsapp img{width:100%}
+
+/* ========== RESPONSIVE ========== */
 @media(min-width:768px){
   .about{grid-template-columns:1fr 1fr}
   .services{grid-template-columns:repeat(3,1fr)}
   .youtube-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-wrap{grid-template-columns:1.2fr .8fr}
 }
 @media(min-width:1024px){
   .youtube-grid{grid-template-columns:repeat(4,1fr)}
 }
 
-/* ================= ANIMATIONS ================= */
+/* ========== ANIMATIONS ========== */
 @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-@keyframes pulse{50%{transform:scale(1.1)}}
+@keyframes pulse{50%{transform:scale(1.12)}}
 @keyframes fade{from{opacity:.4}to{opacity:1}}
 </style>
 </head>
@@ -195,7 +238,6 @@ h2{text-align:center;color:var(--gold);margin-bottom:36px}
   <p>திருத்தணி முருகன் துணை</p>
 </div>
 
-<!-- HEADER -->
 <header>
 <nav>
   <h1>ஸ்ரீ லக்ஷ்மி தேவி ஜோதிட நிலையம்</h1>
@@ -206,7 +248,6 @@ h2{text-align:center;color:var(--gold);margin-bottom:36px}
 </nav>
 </header>
 
-<!-- ABOUT -->
 <section id="about">
 <h2>எங்களை பற்றி</h2>
 <div class="about">
@@ -214,12 +255,11 @@ h2{text-align:center;color:var(--gold);margin-bottom:36px}
 <p>
 <strong>ஜோதிடர்: கே. லக்ஷ்மி தேவி</strong><br>
 M.Sc., M.A., B.Ed., M.A (Astro)<br><br>
-திருமணம், வேலை வாய்ப்பு, தொழில் மேன்மை மற்றும் குடும்ப பிரச்சினைகளுக்கு எளிய பரிகாரங்கள்
+திருமணம், வேலை, தொழில், குடும்ப பிரச்சினைகளுக்கு எளிய பரிகாரங்கள்
 </p>
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
 <h2>சேவைகள்</h2>
 <div class="services">
@@ -232,41 +272,43 @@ M.Sc., M.A., B.Ed., M.A (Astro)<br><br>
 </div>
 </section>
 
-<!-- YOUTUBE (FIXED EMBED URLS) -->
 <section id="youtube">
 <h2>ஜோதிட வீடியோக்கள்</h2>
 <div class="youtube-grid">
-  <div class="yt-card">
-    <iframe src="https://www.youtube.com/embed/uewvbdKDZSI" allowfullscreen></iframe>
-  </div>
-  <div class="yt-card">
-    <iframe src="https://www.youtube.com/embed/GCbdCEUoWXg" allowfullscreen></iframe>
-  </div>
-  <div class="yt-card">
-    <iframe src="https://www.youtube.com/embed/pjiAAfWTD1s" allowfullscreen></iframe>
-  </div>
-  <div class="yt-card">
-    <iframe src="https://www.youtube.com/embed/akET2ppH9Rk" allowfullscreen></iframe>
-  </div>
+  <div class="yt-card"><iframe src="https://www.youtube.com/embed/uewvbdKDZSI"></iframe></div>
+  <div class="yt-card"><iframe src="https://www.youtube.com/embed/GCbdCEUoWXg"></iframe></div>
+  <div class="yt-card"><iframe src="https://www.youtube.com/embed/pjiAAfWTD1s"></iframe></div>
+  <div class="yt-card"><iframe src="https://www.youtube.com/embed/akET2ppH9Rk"></iframe></div>
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 <h2>தொடர்பு கொள்ள</h2>
-<div class="contact-card">
-  <div class="contact-item">📞 <a href="tel:9385719579">93857 19579</a></div>
-  <div class="contact-item">📧 <a href="mailto:lakshmideviastro@gmail.com">luckdev2015Kld@gmail.com</a></div>
-  <div class="contact-item">📍vaniyambadi, Tamil Nadu</div>
+<div class="contact-wrap">
+  <div class="contact-info">
+    <div class="contact-line">📞 <a href="tel:9385719579">+91 93857 19579</a></div>
+    <div class="contact-line">📧 luckdev2015Kld@gmail.com</div>
+    <div class="contact-line">📍 Vaniyambadi, Tamil Nadu</div>
+    <div class="contact-social">
+      <a href="https://www.instagram.com/universe_lakdev/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+      </a>
+      <a href="https://www.facebook.com/lakshmi.dhevi.astrologer/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+      </a>
+    </div>
+  </div>
 
-  <div class="social-row">
-    <a href="https://www.instagram.com/universe_lakdev/"><img src="https://img.freepik.com/premium-psd/instagram-logo_971166-164497.jpg?semt=ais_hybrid&w=740&q=80"></a>
-    <a href="https://www.facebook.com/lakshmi.dhevi.astrologer/"><img src="https://image.similarpng.com/file/similarpng/very-thumbnail/2021/10/Facebook-icon-design-on-transparent-background-PNG.png"></a>
+  <div class="contact-cta">
+    <h3>📲 உடனடி ஆலோசனை</h3>
+    <p>WhatsApp மூலம் நேரடியாக தொடர்பு கொள்ளுங்கள்</p>
+    <a class="cta-btn"
+       href="https://wa.me/919385719579?text=Vanakkam%20🙏%0AI%20need%20astrology%20service"
+       target="_blank">WhatsApp Chat</a>
   </div>
 </div>
 </section>
 
-<!-- WHATSAPP -->
 <a class="whatsapp"
 href="https://wa.me/919385719579?text=Vanakkam%20🙏%0AI%20need%20astrology%20service"
 target="_blank">
